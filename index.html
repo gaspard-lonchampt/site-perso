@@ -14,17 +14,17 @@
     <section class="hero is-fullheight">
         <!-- Hero head: will stick at the top -->
         <div class="hero-head">
-            <header class="navbar is-transparent is-fixed-top">
+            <header class="navbar is-fixed-top" id="nav_bar_js">
                 <div class="container">
                     <div class="navbar-brand">
                         <a class="navbar-item" id="nav_hover_3">
                             Gaspard Lonchampt
                         </a>
-                        <span class="navbar-burger burger" data-target="navbarMenuHeroC">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
+                        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
                     </div>
                     <div id="navbarMenuHeroC" class="navbar-menu">
                         <div class="navbar-end">
@@ -78,14 +78,15 @@
     <section class="section">
 
         <!-- entourer les tabs et leurs contenus correspondants d'un élément ayant la classe js-tabs-container. -->
-        <div class="container js-tabs-container">
+        <div class="hero-foot js-tabs-container">
 
-            <div class="tabs is-centered is-large">
+            <nav class="tabs is-boxed is-centered is-large">
+
                 <ul>
                     <!-- chaque item contient un attribut data-tab dont la valeur correspond à l'ID du contenu correspondant -->
                     <li class="is-active" data-tab="tab-skills"><a><span class="icon is-small"><i
                                     class="far fa-keyboard" aria-hidden="true"></i></span>
-                            <span>Coding Skills</span></a></li>
+                            <span>Skills</span></a></li>
                     <li data-tab="tab-front"><a><span class="icon is-small"><i class="fab fa-css3"
                                     aria-hidden="true"></i></span>
                             <span>Front-end</span></a></li>
@@ -96,7 +97,7 @@
                                     aria-hidden="true"></i></span>
                             <span>CMS</span></a></li>
                 </ul>
-            </div>
+            </nav>
 
             <!-- contenu de la tab "Photos" dont l'ID correspond à la valeur de l'attribut data-tab du lien associé -->
             <!-- le contenu initialiement visible au chargement de la page ne porte pas la classe has-display-none -->
@@ -122,22 +123,39 @@
                 </div>
             </div>
 
-            <!-- contenu de la tab "Musique" -->
+            <!-- contenu de la tab "front-end" -->
             <div class="has-display-none js-tab-content" id="tab-front">
-                <article class="message is-info">
-                    <div class="message-header">Front</div>
-                    <div class="message-body">
-                        Lorem amet vel ipsa excepturi soluta Commodi culpa suscipit deserunt odio soluta, voluptas? Ea
-                        ea
-                        dolore ipsum minima delectus. Odit vitae ea temporibus hic obcaecati! Reiciendis quae nisi
-                        inventore
-                        numquam?
-
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                        </figure>
                     </div>
-                </article>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">John Smith</p>
+                                <p class="subtitle is-6">@johnsmith</p>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                            <a href="#">#css</a> <a href="#">#responsive</a>
+                            <br>
+                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- contenu de la tab "Vidéos" -->
+            <!-- contenu de la tab "Back-end" -->
             <div class="has-display-none js-tab-content" id="tab-back">
                 <article class="message is-primary">
                     <div class="message-header">Back</div>
@@ -187,13 +205,13 @@
                 </div>
             </a>
         </div>
-        <div class="navbar-start mt-6">
+        <div class="navbar-start mt-6 is-flex is-justify-content-space-around" id="social_network">
             <a class="navbar-bot mr-6" href="https://github.com/gaspard-lonchampt" target="_blank"><i
                     class="fab fa-github fa-2x"></i></a>
             <a class="navbar-bot" href="https://www.linkedin.com/in/gaspard-lonchampt/" target="_blank"><i
                     class="fab fa-linkedin fa-2x"></i></a>
-            <div class="navbar-end">
-                <h3 class="has-text-right has-text-weight-bold has-text-black">Gaspard Lonchampt ©</h3>
+            <div class="is-flex is-align-items-center is-justify-content-center">
+                <h3 class="has-text-right has-text-weight-bold has-text-black" id="signature">Gaspard Lonchampt ©</h3>
             </div>
         </div>
     </footer>

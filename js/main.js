@@ -22,6 +22,17 @@ window.addEventListener(
   false
 );
 
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("nav_bar_js").style.transform = "translate(0, 0px)";
+  } else {
+    document.getElementById("nav_bar_js").style.transform = "translate(0, -50px)" ;
+  }
+  prevScrollpos = currentScrollPos;
+}; 
+
 // animation page d'accueil 
 
 anime
