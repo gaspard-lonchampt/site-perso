@@ -1,17 +1,69 @@
 @import "../node_modules/bulma/css/bulma.css";
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
 
 /* Global font */
 
 * {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: "Fira Sans", sans-serif;
+  text-decoration: none !important;
+  scroll-behavior: smooth;
 }
 
+h1 {
+  font-weight: 900;
+}
+
+#accueil_body {
+  background-color: black;
+  animation: body 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes body {
+  to {
+    background-color: white ;
+  }
+}
 
 /* style naviguation */
 .navbar-item {
   font-weight: 900;
-  color: gray !important;
+}
+
+.navbar-menu {
+   background-color: transparent !important;
+}
+
+#nav_hover_1:hover {
+  color: white;
+  animation: navbar 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#nav_hover_2:hover {
+  color: white;
+  animation: navbar 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+#nav_hover_3:hover {
+  color: white;
+  animation: navbar 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+@keyframes navbar {
+  to {
+    color: black;
+  }
 }
 
 .navbar-item:before,
@@ -40,14 +92,16 @@
   -webkit-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
 }
-.navbar-item:hover {
-  color: white !important;
-}
+
 .navbar-item:hover:before,
 .navbar-item:hover:after {
   -webkit-transform: translate(0%, 0%);
   transform: translate(0%, 0%);
   opacity: 1;
+}
+
+.navbar-bot {
+  color: black;
 }
 /* fin nav */
 
@@ -115,16 +169,93 @@ h1.ml8 {
 }
 /* fin animation hero banner */
 
+/* animation des tabs  */
+ .has-display-none {
+    display: none;
+    visibility: hidden;
+}
+
+/* footer */
+
+#footer_tagline {
+  font-weight: 400;
+  color: black;
+}
+
+#footer_title {
+  font-weight: 100;
+  color: black;
+  text-transform: uppercase;
+  margin-bottom: 0 !important;
+}
+/* animation footer bottom */
+#footer_contain_contact::after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 4px;
+  background-color: black;
+  transition: width 0.3s;
+}
+#footer_contain_contact:hover::after {
+  width: 100%;
+}
+
+#footer_contain_contact {
+  background: url(../media/grunge-arrow-2-3.png) no-repeat 98% 40%;
+  background-repeat: no-repeat;
+  background-size: 2em;
+  transition: linear 0.2s;
+}
+
+/* animation flèche footer */
+
+#footer_contain_contact:hover {
+  transition: background-position 1s;
+  background-position-y: 0%;
+  background-position-x: 100%;
+}
+
+/* FIN FOOTER */
+
 /* 1280-1024   - desktop (default grid) */
 @media all and (min-width: 1024px) {
   /* hero banner  */
   h1.ml8 {
     font-size: 2em;
   }
+
+  #footer_tagline {
+    font-size: 1.5em;
+  }
+
+  #footer_title {
+    font-size: 3.3em;
+  }
+
+  #footer_contain_contact {
+    background-size: 2.9em;
+    background-position-y: 70%;
+    background-position-x: 98%;
+  }
 }
 
 /* *   1024-768    - tablet landscape */
 @media all and (min-width: 768px) and (max-width: 1024px) {
+  #footer_tagline {
+    font-size: 1em;
+  }
+
+  #footer_title {
+    font-size: 2.7em;
+  }
+
+  #footer_contain_contact {
+    background-size: 2.3em;
+    background-position-y: 48%;
+    background-position-x: 98%;
+    padding-top: 0.1em !important;
+  }
 }
 
 /* 768-480     - tablet  */
@@ -133,8 +264,37 @@ h1.ml8 {
   h1.ml8 {
     font-size: 1.5em;
   }
+
+  #footer_tagline {
+    font-size: 1.5em;
+  }
+
+  #footer_title {
+    font-size: 2.7em;
+  }
+
+  #footer_contain_contact {
+    background-size: 2em;
+    background-position-y: 48%;
+    background-position-x: 98%;
+    padding-top: 0.1em !important;
+  }
 }
 
 /* 480-less    - phone landscape & smaller */
 @media all and (max-width: 480px) {
+  #footer_tagline {
+    font-size: 1em;
+  }
+
+  #footer_title {
+    font-size: 2.2em;
+  }
+
+  #footer_contain_contact {
+    background-size: 1.5em;
+    background-position-y: 40%;
+    background-position-x: 98%;
+    padding-top: 0.1em !important;
+  }
 }
